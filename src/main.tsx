@@ -212,7 +212,7 @@ function App(){
       {sessionUser && <button style={{marginTop:10}} onClick={checkCloudHistory}>Check cloud history</button>}
       {authMessage && <div style={{fontSize:13,marginTop:8}}>{authMessage}</div>}
     </section>
-   <section className="hero"><div><div className="eyebrow">4-MONTH PROGRESSION</div><h1>Build strength.<br/><em>Move better.</em></h1><p>Home program using bands, kettlebells, rings and your pull-up bar.</p></div><div className="hero-stat"><strong>{Math.round(doneSets/Math.max(1,totalSets)*100)}%</strong><span>WEEK COMPLETE</span></div></section>
+   <section className="hero"><div><div className="eyebrow">4-MONTH PROGRESSION</div><h5>Build strength.<br/><em>Move better.</em></h5><p>Home program using bands, kettlebells, rings and your pull-up bar.</p></div><div className="hero-stat"><strong>{Math.round(doneSets/Math.max(1,totalSets)*100)}%</strong><span>WEEK COMPLETE</span></div></section>
    <nav className="tabs">{[["today","Today",Dumbbell],["plan","Program",CalendarDays],["progress","Progress",ChartNoAxesCombined]].map(([id,label,Icon]:any)=><button className={tab===id?"active":""} onClick={()=>setTab(id)} key={id}><Icon size={17}/>{label}</button>)}</nav>
    {tab==="today"&&<><div className="day-strip">{days.map(d=><button onClick={()=>setSelected(d.id)} className={selected===d.id?"sel":""} key={d.id}><span>{d.name.slice(0,3)}</span><b>{d.name.slice(0,1)}</b></button>)}</div>
     <section className="section-head"><div><div className="eyebrow">{day.focus}</div><h2>{day.name}</h2></div><span className="pill">{day.duration}</span></section>
